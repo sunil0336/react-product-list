@@ -7,14 +7,11 @@ const ProductList = () => {
     const { products, search, category, price, page, loading } =
         useProductContext();
 
-    // ✅ useMemo at top level
     const filteredProducts = useMemo(() => {
-        return products.filter(p =>
-            p.name.toLowerCase().includes(search.toLowerCase()) &&
-            (category === "All" || p.category === category) &&
-            p.price <= price
+        return products.filter((p) =>
+            p.name.toLowerCase().includes(search.toLowerCase())
         );
-    }, [products, search, category, price]);
+    }, [products, search]);
 
     const paginatedProducts = useMemo(() => {
         const start = (page - 1) * ITEMS_PER_PAGE;
