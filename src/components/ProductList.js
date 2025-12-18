@@ -8,10 +8,16 @@ const ProductList = () => {
         useProductContext();
 
     const filteredProducts = useMemo(() => {
-        return products.filter((p) =>
-            p.name.toLowerCase().includes(search.toLowerCase())
-        );
-    }, [products, search]);
+        return products
+            .filter(p =>
+                p.name.toLowerCase().includes(search.toLowerCase())
+            )
+            .filter(p =>
+                category === "All" ? true : p.category === category
+            )
+            .filter(p => p.price <= price);
+    }, [products, search, category, price]);
+
 
     const paginatedProducts = useMemo(() => {
         const start = (page - 1) * ITEMS_PER_PAGE;
