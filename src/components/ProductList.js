@@ -21,19 +21,24 @@ const ProductList = () => {
         return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
     }, [filteredProducts, page]);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p className="text-center text-gray-500 animate-pulse">
+        Loading products...
+    </p>
+        ;
 
     return (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
             {paginatedProducts.map(p => (
                 <div
                     key={p.id}
-                    className="border p-4 rounded-lg hover:shadow-lg transition duration-300 bg-white"
+                    className="border rounded-xl p-4 bg-white hover:shadow-lg hover:-translate-y-1 transition duration-300"
                 >
 
-                    <h3>{p.name}</h3>
-                    <p>{p.category}</p>
-                    <p>₹{p.price}</p>
+                    <h3 className="font-semibold text-lg">{p.name}</h3>
+                    <p className="text-sm text-gray-500">{p.category}</p>
+                    <p className="font-bold mt-2">₹{p.price}</p>
+
                 </div>
             ))}
         </div>

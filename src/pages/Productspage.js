@@ -5,20 +5,21 @@ import Pagination from "../components/Pagination";
 
 const ProductsPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto bg-white p-6 rounded shadow">
-        <h1 className="text-2xl font-bold mb-4 text-center">
-          Product Catalog
-        </h1>
+    <div className="min-h-screen bg-gray-100 py-8">
+  <div className="max-w-6xl mx-auto px-4">
+    <h1 className="text-3xl font-bold text-center mb-8">
+      Product Catalog
+    </h1>
 
-        <div className="space-y-4">
-          <SearchBar />
-          <Filters />
-          <ProductList />
-          <Pagination />
-        </div>
-      </div>
+    <div className="bg-white p-6 rounded-xl shadow space-y-6">
+      <SearchBar />
+      <Filters />
+      <ProductList />
+      <Pagination />
     </div>
+  </div>
+</div>
+
   );
 };
 

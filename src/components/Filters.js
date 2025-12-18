@@ -16,10 +16,11 @@ const Filters = () => {
   }, []);
 
   return (
-  <div className="flex flex-wrap gap-4 items-center">
+  <div className="flex flex-wrap gap-4 items-center bg-gray-50 p-4 rounded-lg">
+
     <select
       onChange={handleCategory}
-      className="border p-2 rounded"
+      className="border p-2 rounded-md"
     >
       <option>All</option>
       <option>Mobile</option>
@@ -32,6 +33,7 @@ const Filters = () => {
         type="range"
         min="50"
         max="2000"
+        className="accent-blue-500"
         value={price}
         onChange={handlePrice}
       />

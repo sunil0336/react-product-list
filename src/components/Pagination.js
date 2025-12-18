@@ -26,11 +26,12 @@ const Pagination = () => {
         <button
           key={i}
           onClick={() => setPage(i + 1)}
-          className={`px-4 py-2 border rounded-full text-sm ${
-  page === i + 1
-    ? "bg-blue-500 text-white"
-    : "hover:bg-gray-100"
-}`}
+          className={`px-4 py-2 rounded-full border text-sm
+              ${page === i + 1
+              ? "bg-blue-500 text-white"
+              : "hover:bg-gray-100"}
+              transition`}
+
         >
           {i + 1}
         </button>

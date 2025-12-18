@@ -11,11 +11,13 @@ const SearchBar = () => {
 
   return (
     <input
-      value={search}
-      onChange={handleSearch}
-      placeholder="Search product..."
-      className="border p-3 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+      type="text"
+      placeholder="Search products..."
+      className="w-full border p-3 rounded-lg
+             focus:outline-none focus:ring-2 focus:ring-blue-500
+             transition"
     />
+
   );
 };
 
